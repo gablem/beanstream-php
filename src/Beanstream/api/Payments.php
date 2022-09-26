@@ -97,7 +97,7 @@ class Payments {
      * @param bool $merchant_data The IDEBIT_MERCHDATA value returned by the Interac response
 	 * @return array Transaction details
      */	
-     public function continuePayment($data = NULL, $merchant_data) {
+     public function continuePayment($data, $merchant_data) {
 		$endpoint =  $this->_endpoint->getContinuationsURL($merchant_data);
 		return $this->_connector->processTransaction('POST', $endpoint, $data);
 	}
